@@ -1,19 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h2>Taş Kağıt Makas Oyunu</h2>
-        <img src={logo} className="App-logo" alt="logo" />
+        <h1>Taş Kağıt Makas Oyunu</h1>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://onlineyosokulu.com"
           target="_blank"
           rel="noopener noreferrer"
         >
         </a>
+
       </header>
     </div>
   );
