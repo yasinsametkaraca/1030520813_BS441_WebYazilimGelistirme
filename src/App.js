@@ -1,21 +1,33 @@
 import './App.css';
-
 import React, { useState } from 'react';
 import SinglePlayer from "./components/SinglePlayer";
 import MultiPlayer from "./components/MultiPlayer";
+import ThreeWin from "./components/ThreeWin";
+
 
 const App = () => {
 
     const [mode, setMode] = useState('home');
 
     return (
-        <div>
-            <h3>Rock Paper Scissors Game</h3>
+        <div className={"container"}>
+            <h1>Rock Paper Scissors Game</h1>
             {mode === 'home' && (
                 <div>
-                    <p>Choose a game mode:</p>
-                    <button onClick={() => setMode('singlePlayer')}>Single Player</button>
-                    <button onClick={() => setMode('multiPlayer')}>Multiplayer</button>
+                    <div>
+                        <p>Lutfen Bir Oyun Modu Seciniz</p>
+                    </div>
+                    <div className={"container"}>
+                        <span>
+                            <button className={"button"} onClick={() => setMode('singlePlayer')}>Single Player</button>
+                        </span>
+                        <span>
+                            <button className={"button"} onClick={() => setMode('multiPlayer')}>Multi player</button>
+                        </span>
+                        <span>
+                            <button className={"button"} onClick={() => setMode('threeWin')}>3 Wins</button>
+                        </span>
+                    </div>
                 </div>
             )}
             {mode === 'singlePlayer' && (
@@ -24,10 +36,13 @@ const App = () => {
             {mode === 'multiPlayer' && (
                 <MultiPlayer></MultiPlayer>
             )}
+            {mode === 'threeWin' && (
+                <ThreeWin></ThreeWin>
+            )}
             <br/>
             {mode !== 'home' && (
                 <div>
-                    <button onClick={() => setMode('home')}>Return Back to Menu</button>
+                    <button className={"button"} onClick={() => setMode('home')}>Return Back to Menu</button>
                 </div>
             )}
         </div>
