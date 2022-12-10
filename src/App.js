@@ -3,11 +3,12 @@ import React, { useState } from 'react';
 import SinglePlayer from "./components/SinglePlayer";
 import MultiPlayer from "./components/MultiPlayer";
 import ThreeWin from "./components/ThreeWin";
-
+import Count from "./components/Count";
 
 const App = () => {
 
     const [mode, setMode] = useState('home');
+    const [count, setCount] = useState(1)
 
     return (
         <div className={"container"}>
@@ -27,6 +28,9 @@ const App = () => {
                         <span>
                             <button className={"button"} onClick={() => setMode('threeWin')}>3 Wins</button>
                         </span>
+                        <span>
+                            <button className={"button"} onClick={() => setMode('whichWin')}>Which Wins</button>
+                        </span>
                     </div>
                 </div>
             )}
@@ -37,7 +41,10 @@ const App = () => {
                 <MultiPlayer></MultiPlayer>
             )}
             {mode === 'threeWin' && (
-                <ThreeWin></ThreeWin>
+                <ThreeWin scoreCount={3}></ThreeWin>
+            )}
+            {mode === 'whichWin' && (
+                <Count></Count>
             )}
             <br/>
             {mode !== 'home' && (
@@ -45,8 +52,9 @@ const App = () => {
                     <button className={"button"} onClick={() => setMode('home')}>Return Back to Menu</button>
                 </div>
             )}
+
+            <p>Oyunumuzda 4 Tane Oyun Modu vardır. Birinci oyun modunde tek başınıza bilgisayara karşı oynuyorsunuz ve sadece tek turdan oluşmaktadır. 2. Oyun modu iki oyuncunun birlikte oynayabileceği bir oyun modudur ve tek turdan oluşmaktadır. 3. oyun modunda ise 3 yapan kazanır. 4. oyun modunda ise oyunun kaçta biteceğini siz belirliyosunuz. Kolay Gelsin...</p>
         </div>
     );
 }
-
 export default App;

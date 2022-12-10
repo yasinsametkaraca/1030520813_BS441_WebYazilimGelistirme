@@ -4,7 +4,7 @@ import paperImage from  "../assets/paper.PNG"
 import rockImage from "../assets/rock.PNG"
 import scissorImage from "../assets/scissor.PNG"
 
-const SinglePlayer = (props) => {
+const SinglePlayer = () => {
     const [playerChoice, setPlayerChoice] = useState(null);
 
     const randomComputerChoice = Math.floor(Math.random()*3);
@@ -13,7 +13,6 @@ const SinglePlayer = (props) => {
         computerChoice = 'rock';
     } else if (randomComputerChoice === 1) {
         computerChoice = 'paper';
-
     } else {
         computerChoice = 'scissors';
     }
