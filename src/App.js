@@ -8,7 +8,6 @@ import Count from "./components/Count";
 const App = () => {
 
     const [mode, setMode] = useState('home');
-    const [count, setCount] = useState(1)
 
     return (
         <div className={"container"}>
