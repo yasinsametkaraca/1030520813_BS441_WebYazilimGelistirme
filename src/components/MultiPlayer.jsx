@@ -26,7 +26,7 @@ const MultiPlayer = (props) => {
     return (
         <div>
             <p>{props.player1Name}: <strong>{player2Choice ? player1Choice : '?'}</strong></p>
-            <p>{props.player2Name}: <strong>{player2Choice || '?'}</strong></p>
+            <p>{props.player2Name}: <strong>{player2Choice || '?'}</strong></p><hr/>
 
             {player2Choice===null ?
                 (<div>

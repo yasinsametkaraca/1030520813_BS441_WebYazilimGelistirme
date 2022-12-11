@@ -4,7 +4,7 @@ import paperImage from  "../assets/paper.PNG"
 import rockImage from "../assets/rock.PNG"
 import scissorImage from "../assets/scissor.PNG"
 
-const SinglePlayer = () => {
+const SinglePlayer = (props) => {
     const [playerChoice, setPlayerChoice] = useState(null);
 
     const randomComputerChoice = Math.floor(Math.random()*3);
@@ -27,13 +27,13 @@ const SinglePlayer = () => {
     } else if (computerChoice === playerChoice) {
         resultMatch = 'Match is tie. There is no winner';
     } else {
-        resultMatch = 'Player Win';
+        resultMatch = props.playerName+ ' Win';
     }
 
     return (
         <div>
             <p>Computer: <strong>{playerChoice && computerChoice}</strong></p>
-            <p>Player: <strong>{playerChoice}</strong></p>
+            <p>{props.playerName}: <strong>{playerChoice}</strong></p><hr />
 
             { playerChoice===null ?
                 (<div>

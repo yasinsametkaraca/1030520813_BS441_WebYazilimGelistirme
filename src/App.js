@@ -1,9 +1,7 @@
 import './App.css';
 import React, { useState } from 'react';
-import SinglePlayer from "./components/SinglePlayer";
-import MultiPlayer from "./components/MultiPlayer";
-import ThreeWin from "./components/ThreeWin";
-import Count from "./components/Count";
+import SingleWithScore from "./components/SingleWithScore";
+import ScoreCount from "./components/ScoreCount";
 import PlayerData from "./components/PlayerData";
 
 const App = () => {
@@ -35,16 +33,16 @@ const App = () => {
                 </div>
             )}
             {mode === 'singlePlayer' && (
-               <SinglePlayer></SinglePlayer>
+               <PlayerData gameType={"single"}></PlayerData>
             )}
             {mode === 'multiPlayer' && (
-                <PlayerData></PlayerData>
+                <PlayerData gameType={"multi"}></PlayerData>
             )}
             {mode === 'threeWin' && (
-                <ThreeWin scoreCount={3}></ThreeWin>
+                <SingleWithScore scoreCount={3}></SingleWithScore>
             )}
             {mode === 'whichWin' && (
-                <Count></Count>
+                <ScoreCount></ScoreCount>
             )}
             <br/>
             {mode !== 'home' && (

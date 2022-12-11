@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import ThreeWin from "./ThreeWin";
+import SingleWithScore from "./SingleWithScore";
 
-const Count = () => {
+const ScoreCount = () => {
 
     const [count,setCount] = useState(1);
     const [game,setGame] = useState(false)
@@ -14,7 +14,7 @@ const Count = () => {
     if(game){
         console.log(count)
         return (
-            <ThreeWin scoreCount={count}></ThreeWin>
+            <SingleWithScore scoreCount={count}></SingleWithScore>
         )
     }
     return (
@@ -31,4 +31,4 @@ const Count = () => {
     );
 };
 
-export default Count;
+export default ScoreCount;
