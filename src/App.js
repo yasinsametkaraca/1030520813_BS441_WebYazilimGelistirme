@@ -4,6 +4,7 @@ import SinglePlayer from "./components/SinglePlayer";
 import MultiPlayer from "./components/MultiPlayer";
 import ThreeWin from "./components/ThreeWin";
 import Count from "./components/Count";
+import PlayerData from "./components/PlayerData";
 
 const App = () => {
 
@@ -37,7 +38,7 @@ const App = () => {
                <SinglePlayer></SinglePlayer>
             )}
             {mode === 'multiPlayer' && (
-                <MultiPlayer></MultiPlayer>
+                <PlayerData></PlayerData>
             )}
             {mode === 'threeWin' && (
                 <ThreeWin scoreCount={3}></ThreeWin>

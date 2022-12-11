@@ -4,7 +4,7 @@ import paperImage from  "../assets/paper.PNG"
 import rockImage from "../assets/rock.PNG"
 import scissorImage from "../assets/scissor.PNG"
 
-const MultiPlayer = () => {
+const MultiPlayer = (props) => {
 
     const [player1Choice, setPlayer1Choice] = useState(null);
     const [player2Choice, setPlayer2Choice] = useState(null);
@@ -12,34 +12,34 @@ const MultiPlayer = () => {
 
     let resultMatch;
     if (player1Choice === 'rock' && player2Choice === 'scissors') {
-        resultMatch = 'Player 1 Win';
+        resultMatch = props.player1Name+' Win';
     } else if (player1Choice === 'paper' && player2Choice === 'rock') {
-        resultMatch = 'Player 1 Win';
+        resultMatch = props.player1Name+' Win';
     } else if (player1Choice === 'scissors' && player2Choice === 'paper') {
-        resultMatch = 'Player 1 Win';
+        resultMatch = props.player1Name+' Win';
     } else if (player1Choice === player2Choice) {
         resultMatch = 'Match is tie. There is no winner';
     } else {
-        resultMatch = 'Player 2 Win';
+        resultMatch = props.player2Name+' Win';
     }
 
     return (
         <div>
-            <p>Player 1: <strong>{player2Choice ? player1Choice : '?'}</strong></p>
-            <p>Player 2: <strong>{player2Choice || '?'}</strong></p>
+            <p>{props.player1Name}: <strong>{player2Choice ? player1Choice : '?'}</strong></p>
+            <p>{props.player2Name}: <strong>{player2Choice || '?'}</strong></p>
 
             {player2Choice===null ?
                 (<div>
-                    <button onClick={() => setPlayer1Choice('rock')}>Player 1 <img height={100} width={100} alt={"rock"} src={rockImage}/></button>
-                    <button onClick={() => setPlayer1Choice('paper')}>Player 1 <img height={100} width={100} alt={"rock"} src={paperImage}/></button>
-                    <button onClick={() => setPlayer1Choice('scissors')}>Player 1 <img height={100} width={100} alt={"rock"} src={scissorImage}/></button>
+                    <button onClick={() => setPlayer1Choice('rock')}>{props.player1Name} <img height={100} width={100} alt={"rock"} src={rockImage}/></button>
+                    <button onClick={() => setPlayer1Choice('paper')}>{props.player1Name} <img height={100} width={100} alt={"rock"} src={paperImage}/></button>
+                    <button onClick={() => setPlayer1Choice('scissors')}>{props.player1Name} <img height={100} width={100} alt={"rock"} src={scissorImage}/></button>
                     <hr />
 
                     { player1Choice &&
                         (<div>
-                            <button onClick={() => setPlayer2Choice('rock')}>Player 2 <img height={100} width={100} alt={"rock"} src={rockImage}/></button>
-                            <button onClick={() => setPlayer2Choice('paper')}>Player 2 <img height={100} width={100} alt={"rock"} src={paperImage}/></button>
-                            <button onClick={() => setPlayer2Choice('scissors')}>Player 2 <img height={100} width={100} alt={"rock"} src={scissorImage}/></button>
+                            <button onClick={() => setPlayer2Choice('rock')}>{props.player2Name} <img height={100} width={100} alt={"rock"} src={rockImage}/></button>
+                            <button onClick={() => setPlayer2Choice('paper')}>{props.player2Name} <img height={100} width={100} alt={"rock"} src={paperImage}/></button>
+                            <button onClick={() => setPlayer2Choice('scissors')}>{props.player2Name} <img height={100} width={100} alt={"rock"} src={scissorImage}/></button>
                         </div>)}
                 </div>) : <Result resultMatch={resultMatch}></Result>}
         </div>
