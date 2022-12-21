@@ -30,6 +30,11 @@ body {
   text-overflow: ellipsis;
 }
 
+.wrapper{
+  display: block;
+  outline: none;
+}
+
 .button{
 
   display: inline-block;
