@@ -8,18 +8,17 @@ const ScoreCount = () => {
 
     const handleCount = (count) => {
         setCount(count);
-        setGame(true)
+        setGame(true);
     }
 
     if(game){
-        console.log(count)
         return (
             <SingleWithScore scoreCount={count}></SingleWithScore>
         )
     }
     return (
         <div className={"center"}>
-            <p>Oyun Skor Kaç Oldugunda Bitsin İstersiniz?</p>
+            <p>Oyun Skor Kaç Oldugunda Bitsin Istersiniz?</p>
             <div>
                 <button onClick={() => handleCount(1)}>1</button>
                 <button onClick={() => handleCount(2)}>2</button>
