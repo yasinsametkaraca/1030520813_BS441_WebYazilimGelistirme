@@ -18,8 +18,8 @@ const SingleWithScore = ({scoreCount}) => {
 
     const handleChoice = (playerChoice) => {
         let computerChoice = randomChoice();
-        setPlayerChoice(playerChoice)
-        setComputerChoice(computerChoice)
+        setPlayerChoice(playerChoice);
+        setComputerChoice(computerChoice);
         if((computerChoice === 'rock' && playerChoice === 'scissors') || (computerChoice === 'paper' && playerChoice === 'rock') || (computerChoice === 'scissors' && playerChoice === 'paper')) {
             setComputerScore(computerScore+1);
         } else if ((computerChoice === 'scissors' && playerChoice === 'rock') || (computerChoice === 'rock' && playerChoice === 'paper') || (computerChoice === 'paper' && playerChoice === 'scissors')) {
